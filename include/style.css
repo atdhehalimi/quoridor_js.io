@@ -1,0 +1,124 @@
+.main-div {
+    width: 100%;
+    max-width: 575px;
+    aspect-ratio: 1/1;
+    background-color: #B0A092;
+    border-radius: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+    padding-left: 1.3rem;
+}
+
+/* sss */
+
+.inner-div {
+    position: relative;
+    background-color: #A18E80;
+    border-radius: 6px;
+    height: 30%;
+    width: 30%;
+}
+
+.inner-div::before {
+    position: absolute;
+    content: "";
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.inner-div[data-active="true"]::before {
+    opacity: 1;
+}
+
+.inner-div[data-hover="true"]:hover::before {
+    opacity: .5;
+}
+
+.inner-div[data-color="w"]::before {
+    background-color: white;
+}
+
+.inner-div[data-color="b"]::before {
+    background-color: #3f3225;;
+}
+
+.vertical-div {
+    position: relative;
+    background-color: #3f3225;;
+    border-radius: 3px;
+    height: 30%;
+    width: 3%;
+    opacity: 0;
+}
+
+.vertical-div[data-active="true"] {
+    opacity: 1;
+}
+
+.vertical-div[data-order="first"]::after {
+    content: "";
+    position: absolute;
+    background-color: #3f3225;;
+    width: 100%;
+    top: 98%;
+    border-radius: 3px;
+}
+
+
+.vertical-div[data-active="true"]::after {
+    height: 20%;
+}
+
+
+.vertical-div[data-order="first"][data-hover="true"]:hover {
+    opacity: 0.5;
+
+}
+
+.vertical-div[data-hover="true"]::after {
+    height: 115%;
+}
+
+
+
+.horizontal-div {
+    position: relative;
+    background-color: #3f3225;;
+    border-radius: 3px;
+    height: 3%;
+    width: 30%;
+    margin-right: 3%;
+    opacity: 0;
+}
+
+.horizontal-div[data-active="true"] {
+    opacity: 1;
+}
+
+.horizontal-div[data-order="first"]::after {
+    content: "";
+    position: absolute;
+    background-color: #3f3225;;
+    height: 100%;
+    left: 98%;
+    border-radius: 3px;
+}
+
+.horizontal-div[data-active="true"]::after {
+    width: 20%;
+}
+
+
+.horizontal-div[data-order="first"][data-hover="true"]:hover {
+    opacity: 0.5;
+}
+
+.horizontal-div[data-hover="true"]::after {
+    width: 115%;
+}
