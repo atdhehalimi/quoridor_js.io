@@ -247,7 +247,7 @@
 
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             // console.log(`i:${i}, j:${j}`);
             let array_size = 9;
@@ -309,7 +309,7 @@
 
 
             // Modify the vertical-div click handler
-            $('.vertical-div').on('click', function() {
+            $('.vertical-div').on('click', function () {
                 let row = parseInt($(this).attr('data-row'), 10);
                 let column = parseInt($(this).attr('data-column'), 10);
                 let active = $(this).attr('data-active');
@@ -320,7 +320,7 @@
                 let blocks_remaining = whites_turn_to_play ? white_blocks_remaining : black_blocks_remaining;
 
                 if (blocks_remaining <= 0) {
-                   // alert("No blocks remaining!");
+                    // alert("No blocks remaining!");
                     return;
                 }
 
@@ -363,11 +363,12 @@
                     });
                 }
 
+                whites_turn_to_play = !whites_turn_to_play; // Flip turn here
                 whose_turn_is_to_play();
             });
 
             // Modify the horizontal-div click handler similarly
-            $('.horizontal-div').on('click', function() {
+            $('.horizontal-div').on('click', function () {
                 let row = parseInt($(this).attr('data-row'), 10);
                 let column = parseInt($(this).attr('data-column'), 10);
                 let active = $(this).attr('data-active');
@@ -421,10 +422,11 @@
                     });
                 }
 
+                whites_turn_to_play = !whites_turn_to_play; // Flip turn here
                 whose_turn_is_to_play();
             });
 
-            $('.inner-div').on('click', function() {
+            $('.inner-div').on('click', function () {
                 // Accessing data attributes (prefer using .data())
                 let row = parseInt($(this).attr('data-row'), 10); // Parse row as an integer
                 let column = parseInt($(this).attr('data-column'), 10);
@@ -446,6 +448,7 @@
                     'data-hover': 'false'
                 })
 
+                whites_turn_to_play = !whites_turn_to_play; // Flip turn here
                 whose_turn_is_to_play();
             });
 
@@ -691,21 +694,21 @@
 
                 // Possible moves: up, right, down, left
                 let directions = [{
-                        row: -1,
-                        col: 0
-                    }, // up
-                    {
-                        row: 0,
-                        col: 1
-                    }, // right
-                    {
-                        row: 1,
-                        col: 0
-                    }, // down
-                    {
-                        row: 0,
-                        col: -1
-                    } // left
+                    row: -1,
+                    col: 0
+                }, // up
+                {
+                    row: 0,
+                    col: 1
+                }, // right
+                {
+                    row: 1,
+                    col: 0
+                }, // down
+                {
+                    row: 0,
+                    col: -1
+                } // left
                 ];
 
                 while (queue.length > 0) {
@@ -770,7 +773,7 @@
                     legal_moves("b");
                 }
 
-                whites_turn_to_play = !whites_turn_to_play;
+           
             }
 
 
